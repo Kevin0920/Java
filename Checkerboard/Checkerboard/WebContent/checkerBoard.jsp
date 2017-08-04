@@ -13,29 +13,27 @@
     <!-- getting the value for the name parameter -->
    
    
-    		<% String he = request.getParameter("height"); %>
-    		<% String wi = request.getParameter("width"); %>
-    
+    		<% String height = request.getParameter("height"); %>
+    		<% String width = request.getParameter("width"); %>
+    		<%if(height == null || width == null)  { %>
+    			<% height = "1"; %>
+    			<% width = "1"; %>
+    		<% } %>
+
     <!-- displaying the value -->
-    <h1><%= wi %></h1>
-    <h1><%= he %></h1>
-	<% int h = Integer.parseInt(he); %>
-	<% int w = Integer.parseInt(wi); %>
+    <h1><%= width %></h1>
+    <h1><%= height %></h1>
+	
     <!-- this is a declaration tag for methods -->
-   <%   for(int y = 1; y<= h; y++ ) {  %>
-   <% if(y%2 == 0) { %> 
-   		<div class="pinkbox"> 
-   <% } else { %> 
-   		<div class="bluebox"> 
-   <% } %>
-		   <%   for(int i = 1; i<= w; i++ ) {  %>
-		   			<% if(i%2 == 0) { %>
-		   					<div class="square white"></div>
-		   			<% } else { %>
-	    						<div class="square"></div>
-		   			<% } %>
-		   <%   }  %>
-	  </div>
+   <%   for(int i = 0; i<= Integer.parseInt(height); i++ ) {  %>
+   	 <%   for(int y = 0; y<= Integer.parseInt(width); y++ ) {  %>
+	   <% if((i+y)%2 == 0) { %> 
+		   	<div class="pinkbox"> 
+			   <% } else { %> 
+			   		<div class="bluebox"> 
+			   <% } %>
+		   <% } %>
+	 	 </div>
 	  </div>
 	<%  } %>
     

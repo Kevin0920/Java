@@ -1,12 +1,12 @@
-#pinkbox {
+.pinkbox {
 	height: 50px;
 	width: 50px;
 	background-color: pink;
 	display: inline-block;
 }
-#bluebox {
+.bluebox {
 	height: 50px;
 	width: 50px;
-	background-color: pink;
+	background-color: blue;
 	display: inline-block;
 }
